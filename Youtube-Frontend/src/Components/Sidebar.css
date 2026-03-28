@@ -1,0 +1,25 @@
+body {
+  overflow-x: hidden;
+}
+
+.sidebar {
+  position: absolute;
+  top: 60px;
+  left: -200px;
+  width: 200px;
+  height: 100%;
+  background-color: #202020;
+  color: white;
+  padding: 20px;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar p {
+  margin: 15px 0;
+  cursor: pointer;
+}

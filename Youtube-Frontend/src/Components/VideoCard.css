@@ -1,0 +1,32 @@
+.video-card {
+  cursor: pointer;
+  color: white;
+  width: 100%;
+}
+
+.video-card:hover {
+  transform: scale(1.03);
+  transition: 0.3s;
+}
+
+.video-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.video-info {
+  padding: 8px 0;
+}
+
+.video-info h4 {
+  font-size: 14px;
+  margin: 5px 0;
+  font-size: 15px;
+  font-weight: 600;
+  white-space: normal; 
+}
+
+.video-info p {
+  font-size: 12px;
+  color: gray;
+}

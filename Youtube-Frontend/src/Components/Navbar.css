@@ -1,0 +1,46 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #202020;
+  color: white;
+}
+
+/* LEFT */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.menu {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+/* MIDDLE */
+.navbar-middle {
+  display: flex;
+  gap: 10px;
+}
+
+.navbar-middle input {
+  padding: 6px;
+  width: 300px;
+}
+
+.navbar-middle button {
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+/* RIGHT */
+.navbar-right button {
+  padding: 6px 12px;
+  cursor: pointer;
+}
