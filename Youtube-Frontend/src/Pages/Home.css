@@ -1,0 +1,30 @@
+.home {
+  padding: 20px;
+  background-color: #0f0f0f;
+  min-height: 100vh;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.search-box {
+  width: 300px;
+  padding: 8px;
+  margin-bottom: 20px;
+}
+.main-layout {
+  display: flex;
+}
+/* Main content */
+.content {
+  flex: 1;
+  padding: 20px;
+  background-color: #0f0f0f;
+  min-height: 100vh;
+  transition: 0.3s;
+}
+
+

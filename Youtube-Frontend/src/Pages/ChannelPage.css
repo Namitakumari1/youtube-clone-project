@@ -1,0 +1,18 @@
+.channel-page {
+  color: white;
+  padding: 20px;
+  min-height: 100vh;
+  background-color: #0f0f0f;
+}
+
+.channel-info {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #202020;
+}
+
+.channel-videos {
+  margin-top: 30px;
+  padding: 15px;
+  background-color: #202020;
+}

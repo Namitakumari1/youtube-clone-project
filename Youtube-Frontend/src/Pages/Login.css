@@ -1,0 +1,17 @@
+.login-page {
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 300px;
+}
+
+.login-page input {
+  padding: 10px;
+}
+
+.login-page button {
+  padding: 10px;
+  cursor: pointer;
+}
