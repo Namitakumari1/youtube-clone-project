@@ -102,6 +102,6 @@ DELETE /api/comment/:commentId
 
 GitHub Repository
 
-Paste your GitHub repository link here
+[Paste your GitHub repository link here](https://github.com/Namitakumari1/youtube-clone-project/tree/master)
 
 Author: Namita Kumari
