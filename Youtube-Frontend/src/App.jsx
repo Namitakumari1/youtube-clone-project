@@ -6,6 +6,7 @@ import VideoPage from "./Pages/VideoPage";
 import Sidebar from "./Components/Sidebar";
 import Login from "./Pages/Login";
 import ChannelPage from "./Pages/ChannelPage";
+import Signup from "./Pages/Signup";
 
 function Layout() {
   const [search, setSearch] = useState("");
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: "login",
         element: <Login />
+      },
+      {
+      path: "signup",
+      element: <Signup />
       },
       {
         path: "channel",

@@ -1,0 +1,30 @@
+.signup-page {
+  width: 350px;
+  margin: 60px auto;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #1f1f1f;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.signup-page h2 {
+  text-align: center;
+}
+
+.signup-page input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.signup-page button {
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+}

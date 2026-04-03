@@ -6,12 +6,16 @@ import { useOutletContext } from "react-router-dom";
 import "./Home.css";
 
 function Home() {
+  // Store all videos fetched from backend
   const [videos, setVideos] = useState([]);
+
+  // Store selected category from filter buttons
   const [selectedCategory, setSelectedCategory] = useState("All");
 
+  // Get search text from Navbar using Outlet context
   const { search } = useOutletContext();
 
-  // Fetch all videos from backend
+  // Fetch all videos from backend on component load
   useEffect(() => {
     const fetchVideos = async () => {
       try {
@@ -25,26 +29,44 @@ function Home() {
     fetchVideos();
   }, []);
 
-  // Filter videos by category and search
+  // Filter videos based on selected category and search input
   const filteredVideos = videos.filter((video) => {
-    const categoryMatch = selectedCategory === "All" || video.category === selectedCategory;
-    const searchMatch = !search || video.title.toLowerCase().includes(search.toLowerCase());
+    const categoryMatch =
+      selectedCategory === "All" ||
+      video.category === selectedCategory;
+
+    const searchMatch =
+      !search ||
+      video.title
+        .toLowerCase()
+        .includes(search.toLowerCase());
+
     return categoryMatch && searchMatch;
   });
 
   return (
     <div className="home">
-      {/* Filter Buttons */}
-      <FilterButtons setCategory={setSelectedCategory} />
 
-      {/* Videos Grid */}
+      {/* Category filter buttons */}
+      <FilterButtons
+        setCategory={setSelectedCategory}
+      />
+
+      {/* Video cards grid */}
       <div className="video-grid">
-        {filteredVideos.length > 0 ? (filteredVideos.map((video) => 
-          (<VideoCard key={video._id} video={video} /> ))) : 
-          (<p>No videos found</p>
+        {filteredVideos.length > 0 ? (
+          filteredVideos.map((video) => (
+            <VideoCard
+              key={video._id}
+              video={video}
+            />
+          ))
+        ) : (
+          <p>No videos found</p>
         )}
       </div>
     </div>
   );
 }
+
 export default Home;

@@ -40,7 +40,21 @@
 }
 
 /* RIGHT */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar-right span {
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+}
+
 .navbar-right button {
   padding: 6px 12px;
   cursor: pointer;
+  border: none;
+  border-radius: 4px;
 }
