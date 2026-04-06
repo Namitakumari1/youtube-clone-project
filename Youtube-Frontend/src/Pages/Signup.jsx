@@ -54,7 +54,7 @@ const handleSignup = async () => {
       />
 
       <input type="email" name="email" placeholder="Enter email" value={formData.email}
-        onChange={handleChange}
+        onChange={handleChange} required
       />
 
       <input type="password" name="password" placeholder="Enter password" value={formData.password}
