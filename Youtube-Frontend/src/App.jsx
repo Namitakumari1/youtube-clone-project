@@ -8,17 +8,24 @@ import Login from "./Pages/Login";
 import ChannelPage from "./Pages/ChannelPage";
 import Signup from "./Pages/Signup";
 
+// Common layout component for all pages
 function Layout() {
+  // State for search input from navbar
   const [search, setSearch] = useState("");
+
+  // State to control sidebar open/close
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
+      {/* Common navbar for all pages */}
       <Navbar setSearch={setSearch} setIsOpen={setIsOpen} />
 
       <div className="main-layout">
+        {/* Common sidebar for all pages */}
         <Sidebar isOpen={isOpen} />
 
+        {/* Render child routes inside outlet */}
         <div className="content" style={{ marginLeft: isOpen ? "200px" : "0px" }}>
           <Outlet context={{ search }} />
         </div>
@@ -27,28 +34,34 @@ function Layout() {
   );
 }
 
+// Application routing configuration
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
     children: [
       {
+        // Default home page route
         index: true,
         element: <Home />,
       },
       {
+        // Dynamic route for individual video page
         path: "video/:id",   
         element: <VideoPage />,
       },
       {
+        // Login page route
         path: "login",
         element: <Login />
       },
       {
-      path: "signup",
-      element: <Signup />
+        // Signup page route
+        path: "signup",
+        element: <Signup />
       },
       {
+        // User channel page route
         path: "channel",
         element: <ChannelPage />
       }  
@@ -57,6 +70,7 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+  // Provide router configuration to entire application
   return <RouterProvider router={router} />;
 }
 
