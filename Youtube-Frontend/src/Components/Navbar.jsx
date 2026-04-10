@@ -9,7 +9,7 @@ function Navbar({ setSearch, setIsOpen }) {
   // Get logged-in username from localStorage
   const username = localStorage.getItem("username");
 
-  // Logout function
+  // Handle user logout and redirect to login page
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("username");
@@ -19,56 +19,46 @@ function Navbar({ setSearch, setIsOpen }) {
   return (
     <div className="navbar">
 
-      {/* LEFT SECTION → menu icon + logo */}
+      {/* Left section: menu icon and app logo */}
       <div className="navbar-left">
-        <span
-          className="menu"
-          onClick={() => setIsOpen((prev) => !prev)}
-        >
+        <span className="menu" onClick={() => setIsOpen((prev) => !prev)}>
           <IoMenu />
         </span>
 
-        <h2
-          className="logo"
-          onClick={() => navigate("/")}
-        >
+        {/* Navigate to home page on logo click */}
+        <h2 className="logo" onClick={() => navigate("/")}>
           YouTube
         </h2>
       </div>
 
-      {/* MIDDLE SECTION → search bar */}
+      {/* Middle section: search input */}
       <div className="navbar-middle">
-        <input
-          type="text"
-          placeholder="Search..."
-          onChange={(e) => setSearch(e.target.value)}
-        />
-
+        <input type="text" placeholder="Search..." onChange={(e) => setSearch(e.target.value)}/>
         <button>
           <FaSearch />
         </button>
       </div>
 
-      {/* RIGHT SECTION → auth buttons */}
+      {/* Right section: login/register or username/logout */}
       <div className="navbar-right">
         {username ? (
           <>
-            {/* Show username after login */}
+            {/* Show username after successful login */}
             <span>{username}</span>
 
-            {/* Logout button visible only when user is logged in */}
+            {/* Logout button for authenticated user */}
             <button onClick={handleLogout}>
               Logout
             </button>
           </>
         ) : (
           <>
-            {/* Login button */}
+            {/* Navigate to login page */}
             <button onClick={() => navigate("/login")}>
               Login
             </button>
 
-            {/* Register button */}
+            {/* Navigate to signup page */}
             <button onClick={() => navigate("/signup")}>
               Register
             </button>

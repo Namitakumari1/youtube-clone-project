@@ -8,7 +8,7 @@ function ChannelPage() {
   // State for uploaded videos
   const [videos, setVideos] = useState([]);
 
-  // Dummy data for now (replace with API later)
+  // Load uploaded videos from localStorage on component mount
   useEffect(() => {
     const storedVideos = JSON.parse(
       localStorage.getItem("uploadedVideos")
