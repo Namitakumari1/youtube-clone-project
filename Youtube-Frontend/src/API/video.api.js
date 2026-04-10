@@ -1,12 +1,12 @@
 import API from "./axios";
 
-// Get all videos
+// Fetch all videos from backend
 export const getVideos = async () => {
   const res = await API.get("/video");
   return res.data;
 };
 
-// Get single video
+// Fetch a single video using its unique id
 export const getVideoById = async (id) => {
   const res = await API.get(`/video/${id}`);
   return res.data;
