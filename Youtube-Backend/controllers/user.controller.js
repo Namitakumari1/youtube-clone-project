@@ -84,6 +84,7 @@ export const loginUser = async (req, res) => {
       process.env.JWT_SECRET,
       { expiresIn: "1d" }
     );
+    console.log(token);
 
     // send response
     res.status(200).json({
