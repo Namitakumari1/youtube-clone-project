@@ -20,7 +20,8 @@ function Home() {
     const fetchVideos = async () => {
       try {
         const data = await getVideos();
-        setVideos(data.videos || []);
+        setVideos(data);
+        console.log(data);
       } catch (error) {
         console.log("Error fetching videos:", error);
       }
