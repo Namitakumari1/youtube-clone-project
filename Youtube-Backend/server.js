@@ -11,16 +11,16 @@ dotenv.config();
 
 const app = express();
 
-
 app.use(cors({
-  origin: [
-    "http://localhost:5174",
-    "https://youtube-clone-project-gamma.vercel.app"
-  ],
-  methods: ["GET", "POST", "PUT", "DELETE"]
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
-app.use(express.json());
 
+// Handle preflight requests
+app.options("*", cors());
+
+app.use(express.json());
 
 const port = process.env.PORT || 3000;
 
