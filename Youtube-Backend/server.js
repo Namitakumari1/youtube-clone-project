@@ -14,7 +14,6 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "http://localhost:5175",
     "https://youtube-clone-project-git-master-namitakumari1s-projects.vercel.app",
     "https://youtube-clone-project-gamma.vercel.app"
   ],
