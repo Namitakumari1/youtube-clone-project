@@ -29,6 +29,10 @@ app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
 
+app.get("/test", (req, res) => {
+  res.send("TEST ROUTE WORKING");
+});
+
 // DB connection
 const connectwithdatabase = async () => {
     try {
